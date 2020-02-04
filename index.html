@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Presupost Vue</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+</head>
+
+<body>
+    <div id="app">
+        <h1>SHOPPING LIST</h1>
+        <div id="tabla-presupuesto">
+            <ul class="lista">
+                <li class="row" v-for="todo in productos" v-bind:class="{ active: todo.isActive }">
+                    <p>{{ todo.nombre }}</p>
+                    <p>{{ todo.precio }}€ x</p>
+                    <input type="number" value="1" name="uds" id="uds" min="1">
+                    <p>uds. = {{ todo.total_uds }}</p>
+                    <button id="eliminar">Elimina</button>
+                </li>
+            </ul>
+        </div>
+        <h3>Total despesa: <span id="total">molt</span></h3>
+        <div id="panel">
+            <span>Producte: </span><input v-model:value="name" type="text" name="producto" id="nombre">
+            <span>Preu: </span><input v-model:value="price" type="number" name="precio" id="precio">€<br>
+            <button v-on:click="agregarProducto" id="agregar">Afegir</button>
+            <button v-on:click="eliminarUltimo" id="borrar-ultimo">Esborra l'última fila</button>
+        </div>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <script src="scripts.js"></script>
+</body>
+
+</html>

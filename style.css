@@ -1,0 +1,25 @@
+#tabla-presupuesto {
+    height: 400px;
+    width: 1000px;
+    overflow-y: auto;
+    border: 1px solid black;
+}
+
+.row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 30px;
+    border-bottom: 1px solid black;
+    list-style: none;
+    padding: 5px;
+}
+
+.active {
+    color: red;
+}
+
+.lista {
+    margin: 0;
+    padding: 0;
+}
